@@ -11,11 +11,7 @@ const App = () => {
     const reset = () => setCount(0);
     const double = () => setCount(previousCount => previousCount * 2);
     const divide3 = () => setCount(previousCount => {
-            if(previousCount % 3 === 0) {
-                return previousCount/3
-            } else {
-                return previousCount
-            }
+            return previousCount % 3 === 0 ? previousCount/3 : previousCount
         }
     );
 
