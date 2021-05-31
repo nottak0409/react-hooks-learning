@@ -1,10 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const App = props => {
 
     const [state, setState] = useState(props);
     const reset = () => { setState(props); }
     const { name, price } =state
+
+    useEffect(() => {
+        console.log("This is like ComponentDidMount or Componendidupdate");
+    });
+
+    useEffect(() => {
+        console.log("This is like ComponentDidMount");
+    }, []);
+
+    useEffect(() => {
+        console.log("This callback is for name only");
+    }, [name]);
 
     return (
         <React.Fragment>
