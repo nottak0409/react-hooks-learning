@@ -2,7 +2,7 @@ import React, { useState, useReducer } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import reducer from '../reducers';
-
+import Event from './Event.js'
 const App = props => {
     const [state, dispatch] = useReducer(reducer, []);
     const [title, setTitle] = useState('');
@@ -48,6 +48,7 @@ const App = props => {
                     </tr>
                 </thead>
                 <tbody>
+                    { state.map((event) => (<Event key={event.id} event={event} dispatch={dispatch}/>))}
                 </tbody>
             </table>
         </div>
