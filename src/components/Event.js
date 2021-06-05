@@ -15,9 +15,9 @@ const Event = ({ event }) => {
         const result = window.confirm(`イベント(id=${id})を本当に削除しても良いですか？`);
         if(result) {
             dispatch({
-                type: DELETE_EVENT, id
+                type: DELETE_EVENT,
+                id
             })
-
             dispatch({
                 type: ADD_OPERATION_LOG,
                 description: `イベント(id=${id})を削除しました。`,
